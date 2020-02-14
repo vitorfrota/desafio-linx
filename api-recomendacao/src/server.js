@@ -23,14 +23,14 @@ routes.get('/recommendation', async (req, res)=> {
           async function getData(){
               const productsPopular = mostPopularRes.data.map(item => {     
                 return axios
-                .get(`http://localhost:3333/product/${item.recommendedProduct.id}?type=compact`)
+                .get(`http://localhost:3333/product/${item.recommendedProduct.id}`)
                 .then(r=> r.data.status === 'AVAILABLE' && r.data)
                 .catch(e=> {})
             });
   
             const productsReduction = priceReductionRes.data.slice(0, maxProducts).map(item => {     
               return axios
-              .get(`http://localhost:3333/product/${item.recommendedProduct.id}?type=compact`)
+              .get(`http://localhost:3333/product/${item.recommendedProduct.id}`)
               .then(r=> r.data.status === 'AVAILABLE' && r.data)
               .catch(e=> {})
             });
