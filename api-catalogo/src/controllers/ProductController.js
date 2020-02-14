@@ -5,18 +5,26 @@ module.exports = {
         const  { product_id } = req.params;
         const { type } = req.query;
 
-        const response = await Product.find({ id: product_id });
-        const product = response[0].toObject();
-
-        if(type === 'compact'){
-            const { name, price, status, categories } = product;   
-            return res.json({ 
-                name,
-                price,
-                status,
-                categories
-            });
+        try{
+            const response = await Product.find({ id: product_id });
+            const product = response[0].toObject();
+    
+            if(!response){
+                return res.status(401).json({ error: 'Produto não encontrado!'});
+            }
+    
+            if(type === 'compact'){
+                const { name, price, status, categories } = product;   
+                return res.json({ 
+                    name,
+                    price,
+                    status,
+                    categories
+                });
+            }
+            return res.json(product);
+        }catch(e){
+            return res.status(401).json({ error: 'Tivemos um problema para retornar os dados do produto!'});
         }
-        return res.json(product);
     }
 }
