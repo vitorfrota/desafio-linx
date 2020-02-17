@@ -1,5 +1,5 @@
 #container .carousel{
-    margin: 10px 0;
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,9 +53,11 @@
 #container .carousel ul li{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     transition: ease-in-out .2s;
     border: 1px solid transparent;
     position: relative;
+    height: 380px;
 }
 
 #container .carousel ul li .reduction{ 
@@ -106,6 +108,8 @@
 
 #container .carousel ul li div{
   padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 #container .carousel ul li div h3{
