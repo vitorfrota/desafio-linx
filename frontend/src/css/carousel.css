@@ -1,0 +1,129 @@
+#container .carousel{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container .carousel h2{
+    margin-bottom: 20px;
+    color: #543459;
+}
+
+#container .carousel ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    width: 100%;
+    padding: 0 30px;
+    position: relative;
+}
+
+#container .carousel ul button {
+    position: absolute;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in-out .3s;
+}
+
+#container .carousel ul button:hover{
+  background: RGBA(244, 169, 126, .15);
+}
+
+#container .carousel ul button img{
+    width:40px;
+    height: 40px;
+}
+.previous{
+    left: 5px;
+    top: 35%;
+}
+
+.next{
+    right: 5px;
+    top: 35%;
+}
+
+#container .carousel ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: ease-in-out .2s;
+    border: 1px solid transparent;
+    position: relative;
+    height: 380px;
+}
+
+#container .carousel ul li .reduction{ 
+    background: #543459;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    padding: 8px 4px;
+    border-radius: 2px;
+}
+
+#container .carousel ul li .popular{ 
+    background: #e8ebf0;
+    color: #543459;
+    position: absolute;
+    font-weight: bold;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container .carousel ul li .popular::after{
+    content: '';
+    top: 25px;
+    right: 0px;
+    position: absolute;
+    border-left: 12.5px solid transparent;
+    border-right: 12.5px solid transparent;
+    border-top: 14px solid #e8ebf0;
+}
+
+#container .carousel ul li:hover{
+  background: RGBA(141, 119, 156, 0.15);
+  border:1px solid RGBA(141, 119, 156, 0.15);
+  cursor: pointer;
+}
+
+#container .carousel ul li img{
+    max-height: 220px;
+    min-width: 170px;
+}
+
+#container .carousel ul li div{
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#container .carousel ul li div h3{
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+#container .carousel ul li div span{
+    color: #666;
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+#container .carousel ul li div p strong{
+    color: #543459;
+    font-size: 18px;
+}
