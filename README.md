@@ -25,16 +25,36 @@ A função desta API é fornecer os dados do catálogo de produtos da loja. Esta
 A API possui um único endpoint, sendo ele responsável por fornecer os dados de um determinado produto.
 
 `` ``
-**GET** product/:id
+**GET** /product/:id
 `` ``
 
-Paramêtros
+**Parâmetros**
 
 Nome | Requerido | Descrição
 -----|-----------|----------
 id   |Obrigatório| O ID do produto que você deseja buscar no catálogo da loja
 type | Opcional  | Caso você queira ter como resposta somente os dados (name,price,status,categories), você deve declarar após o id do produto **'?type=compact'** (Ex: /product/1?type=compact)
 
+## Documentação API recomendação
+
+### Introdução
+
+A função desta API é fornecer uma lista de produtos que são mais populares e que estão com desconto. Esta API será consumida pelo frontend da aplicação. Como será iniciada localmente, o acesso à API é a partir de http://localhost:3334. Todos os dados são enviados como JSON.
+
+
+### Endpoints
+
+A API possui um único endpoint, sendo ele responsável por fornecer a lista de produtos mais populares e os que estão com desconto. A API por padrão retorna somente 10 produtos na lista, caso queira que retorne mais, você deve utilizar o parâmetro que encontra na lista a seguir:
+
+`` ``
+**GET** /recommendation
+`` ``
+
+**Parâmetros**
+
+Nome | Requerido | Descrição
+-----|-----------|----------
+maxProducts |Opcional| Caso queira uma quantidade específica de produtos, utilize **'?maxProducts=10'** (Obs: O valor mínimo é de 10 produtos).
 
 
 ## Autores
