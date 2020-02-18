@@ -20,7 +20,7 @@ module.exports = {
             }
             return res.json(product);
         }catch(e){
-            return res.status(401).json({ error: 'Tivemos um problema para retornar os dados do produto!'});
+            return res.status(400).json({ error: 'Tivemos um problema para retornar os dados do produto!'});
         }
     }
 }
