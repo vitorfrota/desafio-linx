@@ -9,10 +9,6 @@ module.exports = {
             const response = await Product.find({ id: product_id });
             const product = response[0].toObject();
     
-            if(!response){
-                return res.status(401).json({ error: 'Produto não encontrado!'});
-            }
-    
             if(type === 'compact'){
                 const { name, price, status, categories } = product;   
                 return res.json({ 
